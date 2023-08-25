@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'shop/css/output.css' %}">
+</head>
+<body class="bg-brand-dark-gray font-poppins text-brand-dark-text">
+    {% include "shop/includes/header.html" %}
+    <main class="w-full">
+        {% block content %}{% endblock content %}
+    </main>
+    {% include "shop/includes/footer.html" %}
+
+    <!-- Jquery Google CDN !-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <!-- Catch CDN fail !-->
+    <script>window.jQuery || document.write('<script src="/static/shop/js/jquery-3.7.0.min.js"><\/script>')</script>
+    <script src="{% static 'shop/js/main.js' %}"></script>
+    {% block scripts %}{% endblock scripts %}
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* assets/css/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* npx tailwindcss -i ./assets/css/styles.css -o ./assets/css/output.css --watch */
+#checkoutModal, #newProductModal{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#cart{
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: .1s linear;
+}
+#cart.active{
+    transform: ScaleX(1)!important;
+    transition: .1s linear!important;
+}
+.overlayActive{
+    overflow: hidden!important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+html {
+  height: 100%;
+}
+body, main {
+  min-height: 100%;
+}
+main{
+  min-height: 100vh;
+}
+.bg-banner1{
+      background-image: url(https://i.imgur.com/FquRATp.jpg);
+}

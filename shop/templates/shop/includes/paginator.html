@@ -1,0 +1,19 @@
+
+<div class="container text-center my-8 px-6 overflow-hidden text-ellipsis">
+    {% if products.has_previous %}
+        <a href="?page=1" class="p-4 border border-brand-light-border hover:bg-brand-light-blue hover:text-white"><span>&#8612;</span></a>
+        <a class="p-4 border border-brand-light-border hover:bg-brand-light-blue hover:text-white" href="?page={{ products.previous_page_number }}"><span>&#8676;</span></a>
+    {% endif %}
+    {% for num in products.paginator.page_range %}
+        {% if products.number == num %}
+            <a href="?page{{ num }}" class="p-4 border border-brand-light-border bg-brand-light-blue text-white">{{ num }}</a>
+        {% elif num > products.number|add:'-3' and num < products.number|add:'3' %}
+            <a class="p-4 border border-brand-light-border hover:bg-brand-light-blue hover:text-white" href="?page={{ num }}">{{ num }}</a>
+        
+        {% endif %}
+    {% endfor %}
+    {% if products.has_next %}
+    <a class="p-4 border border-brand-light-border hover:bg-brand-light-blue hover:text-white" href="?page={{ products.next_page_number }}"><span>&#8614;</span></span></a>
+    <a class="p-4 border border-brand-light-border hover:bg-brand-light-blue hover:text-white" href="?page={{ products.paginator.num_pages }}"><span>&#8677;</span></a>
+    {% endif %}
+</div>
