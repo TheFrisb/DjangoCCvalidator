@@ -2,7 +2,7 @@
 Python w Django, jQuery, TailwindCSS.
 Comes with a preconfigured SQLiteDB.
 
-NOTE: Pillow version 10.0 will throw an error, version 9.5 is used here.
+NOTE: Pillow version 10.0 will throw an error, version 9.5 is used here (used for resizing Product thumbnails and converting to WEBP).
 
 Instructions
 1. Clone git repo preferably in a virtual env
